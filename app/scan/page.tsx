@@ -80,7 +80,8 @@ export default function QRScanner() {
                 <div className="bg-white rounded-2xl shadow-2xl p-6 md:p-8 space-y-6">
                     <div
                         id="qr-reader"
-                        className={`w-full ${isScanning ? 'block' : 'hidden'} rounded-lg overflow-hidden`}
+                        className={`w-full min-h-[300px] ${isScanning ? 'block' : 'hidden'} rounded-lg overflow-hidden bg-black`}
+                        style={{ minHeight: isScanning ? '300px' : '0' }}
                     />
 
                     {!isScanning && (
