@@ -27,3 +27,24 @@
     }
   }
 }
+
+/* QR Scanner Styles */
+#qr-reader {
+  width: 100% !important;
+  min-height: 300px;
+}
+
+#qr-reader video {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+#qr-reader__scan_region {
+  min-height: 250px;
+}
+
+#qr-reader__dashboard {
+  padding: 10px !important;
+}

@@ -22,21 +22,27 @@ export default function AdminLoginPage() {
         setLoading(true);
 
         try {
+            console.log('Attempting login with:', email);
             const { data, error } = await supabase.auth.signInWithPassword({
                 email,
                 password,
             });
 
+            console.log('Login response:', { data, error });
+
             if (error) {
-                setError('Giriş başarısız. Email veya şifre hatalı.');
+                console.error('Login error:', error);
+                setError(`Giriş başarısız: ${error.message}`);
                 return;
             }
 
             if (data.session) {
+                console.log('Session created, redirecting...');
                 router.push('/admin/dashboard');
                 router.refresh();
             }
         } catch (err) {
+            console.error('Unexpected error:', err);
             setError('Bir hata oluştu. Lütfen tekrar deneyin.');
         } finally {
             setLoading(false);
