@@ -3,6 +3,8 @@ import { Card } from '@/components/ui/Card';
 import Link from 'next/link';
 import type { Product } from '@/lib/types/database';
 
+export const dynamic = 'force-dynamic';
+
 export default async function AdminDashboard() {
     const supabase = createClient();
 

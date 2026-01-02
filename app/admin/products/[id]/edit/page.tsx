@@ -2,6 +2,8 @@ import { getProductById } from '../../actions';
 import EditProductForm from './EditProductForm';
 import { notFound } from 'next/navigation';
 
+export const dynamic = 'force-dynamic';
+
 interface EditProductPageProps {
     params: {
         id: string;

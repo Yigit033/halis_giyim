@@ -2,6 +2,8 @@ import { createClient } from '@/lib/supabase/server';
 import { notFound } from 'next/navigation';
 import type { Product } from '@/lib/types/database';
 
+export const dynamic = 'force-dynamic';
+
 interface ProductPageProps {
     params: {
         code: string;
